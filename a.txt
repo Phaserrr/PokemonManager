@@ -1,0 +1,47 @@
+a)
+Start Pokemon App: W0, weil man noch nicht in der App ist, und erst über einen Klick auf das App Icon in die App kommt.
+Da es sich lediglich um den Start der App handelt, braucht es sonst keine Funktionen oder Daten. 
+
+Create Pokemon in App: W1, Neues Pokemon wird in PokemonList eingetragen, deswegen in W1. 
+
+Show Pokemon Details in App: Führt zu W2, wird aber in W1 aufgerufen.
+
+Create Trainer in App: Trainer ist für Pokemon ein Attribut, daher wird bei Erzeugung eines Trainers die Funktion in W2 aufgerufen und das Trainer Attribut entsprechend verändert.
+
+Link Pokemon to Trainer: Wieder in W2, da es sich um eine Veränderung der Attribute eines Pokemons handelt, nämlich dem Trainerattribut
+
+Delete Pokemon in App: Aufgerufen in W1, da für Ausfühung der Operation keine Attribute des Pokemon verändert werden müssen
+
+Edit Pokemon in Android App: Ermöglicht bei Aufruf nach ShowPokemonDetails die Bearbeitung der Attribute des Pokemons und wird daher in W2 aufgerufen.
+
+Save Pokemon Changes: Wird in W2 aufgerufen, wenn geplante Änderungen am Pokemon durchgeführt wurden.	
+
+Swap Pokemon in Android App: Bei Swap wird Trainerattribut des Pokemons geändert, daher muss die Funktion in W2 aufgerufen werden.
+
+Execute Competition in Android App: Bei Funktion werden Attribute wie Trainer und combat_score benutzt, daher Aufruf in W2.
+
+b)
+ShowPokemonDetailsInAndroidApp:
+Preconditions: W1 PokemonList with Pokemon p exists
+Input: W1 PokemonList with Pokemon p
+Postconditions: W2 PokemonDetails with all Details shown
+Output: W2 PokemonDetails with all Details shown
+Exception: User cancels Operation
+Description: Display all Attributes of Pokemon p
+
+LinkPokemonToTrainerInAndroidApp:
+Input: W2 PokemonDetails with Pokemon p
+Output: W2 PokemonDetails with updated Trainer attribute to Trainer t
+Description: Link a Pokemon to a Trainer. One Trainer can have unlimited Pokemons. One Pokemon can only belong to one Trainer at once.
+
+SavePokemonChangesInAndroidApp:
+Preconditions: Pokemon p is in PokemonList. Any Attribute of Pokemon p has been changed via EditPokemonInAndroidApp
+Input: W2 Pokemon p
+Postconditions: Pokemon p's changes have been saved to App Memory
+Output: none
+Exception: Error, save process failed / user cancels saving
+Description: Save Changes made in PokemonDetails to App Memory.
+
+
+
+
